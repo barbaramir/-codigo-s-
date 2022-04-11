@@ -1,6 +1,6 @@
 """
 Code Wars - Projeto Labirinto
-Nível 01 - Grupo 04:
+Nível 01 - Grupo 04
 Bárbara Mirelli de Oliveira Pinto	
 Flavia Lobo Alves	
 Juliana Santana da Costa		
@@ -95,35 +95,16 @@ def main() -> None:
 
     POSICAO_ATUAL = POSICAO_INICIAL
 
-    for i in list(range(2)):
-        if verifica_movimento(POSICAO_ATUAL, CIMA):
-            POSICAO_ATUAL = movimento(POSICAO_ATUAL, CIMA)
-            print_labirinto()
-            sleep(1)
+    LISTA_MOVIMENTOS = [[2, CIMA], [8, DIREITA], [2, BAIXO], [2, DIREITA], [7, BAIXO]]
 
-    for i in list(range(8)):
-        if verifica_movimento(POSICAO_ATUAL, DIREITA):
-            POSICAO_ATUAL = movimento(POSICAO_ATUAL, DIREITA)
-            print_labirinto()
-            sleep(1)
-    
-    for i in list(range(2)):
-        if verifica_movimento(POSICAO_ATUAL, BAIXO):
-            POSICAO_ATUAL = movimento(POSICAO_ATUAL, BAIXO)
-            print_labirinto()
-            sleep(1)
+    for etapa in LISTA_MOVIMENTOS:
 
-    for i in list(range(2)):
-        if verifica_movimento(POSICAO_ATUAL, DIREITA):
-            POSICAO_ATUAL = movimento(POSICAO_ATUAL, DIREITA)
-            print_labirinto()
-            sleep(1)      
+        for _ in list( range(etapa[0]) ):
 
-    for i in list(range(7)):
-        if verifica_movimento(POSICAO_ATUAL, BAIXO):
-            POSICAO_ATUAL = movimento(POSICAO_ATUAL, BAIXO)
-            print_labirinto()
-            sleep(1)
+            if verifica_movimento(POSICAO_ATUAL, etapa[1]):
+                POSICAO_ATUAL = movimento(POSICAO_ATUAL, etapa[1])
+                print_labirinto()
+                sleep(1)
 
     return None
 
