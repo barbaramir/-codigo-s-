@@ -1,0 +1,31 @@
+# Desafio 1: Implemente um jogo em que o usuário tenha que adivinhar um número sorteado pelo computador.
+
+from random import randint
+
+print("\n-------------------------------------------- Bem vindo ao jogo! --------------------------------------------\n")
+
+game = "S"
+
+while game == "S":
+    number = randint(1,100)
+    user_number = input("\nSorteei um número de 1 a 100. Tente a sorte e dê o seu palpite: ")
+
+    if user_number.isnumeric() == True:
+        user_number = int(user_number)
+        if user_number > 100:
+            print("Digite um valor até 100!")
+            continue    
+    else:
+        print("Digite um número inteiro!")
+        continue
+        
+    if user_number < number:
+        print("\nQue azar! O número sorteado é maior.\n")
+    elif user_number > number: 
+        print("\nQue azar! O número sorteado é menor.\n")
+    else:
+        print("\nParabéns! Você acertou o número sorteado!\n")
+
+    game = input("Deseja tentar a sorte novamente? (S/N)\n").upper() 
+
+print("\n-------------------------------------------- Fim de Jogo --------------------------------------------\n")
