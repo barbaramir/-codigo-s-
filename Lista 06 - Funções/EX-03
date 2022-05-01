@@ -1,0 +1,32 @@
+game = "S"
+
+while game == "S":
+
+    number = input("Digite um número: ")
+
+    try:
+        int(number)
+        it_is = True
+    except ValueError:
+        it_is = False
+        print("Por favor, digite um número inteiro!\n")
+        
+    number_list = []
+
+    for i in number:
+        number_list.append(i)
+
+    number_reversed = list(reversed(number_list))
+    number_joined = int(''.join(number_reversed))
+
+    print(f"\nA inversão do número {number} é {number_joined}.\n")
+
+    game = input("Deseja inverter outro número? (S/N)\n").upper()
+    if game != "S":
+        print("--------------Fim de Jogo!--------------")
+        break
+
+
+    
+
+
