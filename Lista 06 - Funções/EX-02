@@ -1,0 +1,16 @@
+reta_01 = float(input("Insira o valor da reta 01: "))
+reta_02 = float(input("Insira o valor da reta 02: "))
+reta_03 = float(input("Insira o valor da reta 03: "))
+
+if reta_01 >= (reta_02 + reta_03) or reta_01 <= 0:
+    print("Não é possível formar um triângulo com esses valores de retas!")
+
+elif reta_02 >= (reta_01 + reta_03) or reta_02 <= 0:
+    print("Não é possível formar um triângulo com esses valores de retas!")
+
+elif reta_03 >= (reta_01 + reta_02) or reta_03 <= 0:
+    print("Não é possível formar um triângulo com esses valores de retas!")
+
+else:
+    print("Com esses valores de reta podemos formar um triângulo!")
+
