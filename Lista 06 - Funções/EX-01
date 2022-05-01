@@ -1,0 +1,12 @@
+def distância_percorrida() -> float:
+    quilometragem = float(input("Digite a distância percorrida (km): "))
+    return quilometragem
+
+def tarifa_total(quilometragem) -> float:
+    tarifa_base = 4
+    tarifa_variavel = quilometragem * 0.25
+    tarifa_final = tarifa_base + tarifa_variavel
+    print(f"\nO valor a ser pago é R${tarifa_final:.2f}.\n\n-------------Obrigada por viajar conosco!-------------\n")
+
+distancia = distância_percorrida()
+tarifa = tarifa_total(distancia)
